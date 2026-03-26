@@ -1,0 +1,37 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: auth-service
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/campus_placement
+      database: campus_placement
+      auto-index-creation: true
+  redis:
+    host: localhost
+    port: 6379
+    ssl:
+      enabled: false
+    timeout: 3000ms
+    connect-timeout: 3000ms
+
+jwt:
+  secret: 4C7ZvkSWhc0upMVkRLunfh4o0flMOvyqNzEByNBST1g+8fDJtyCwXqoUVO7sEdArGsqYC61NdmOiE/p8xOnAfQ==
+  expiration: 86400000
+  refresh-expiration: 604800000
+
+resend:
+  api-key: re_4AEkQRbN_4JdaTb7pL9Zx8FiZG3R8P6FS
+  from-email: onboarding@resend.dev
+
+otp:
+  expiry-minutes: 10
+  max-attempts: 3
+  max-resends: 3
+  lockout-minutes: 30
+
+logging:
+  level:
+    com.placement: DEBUG
